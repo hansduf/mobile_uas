@@ -178,6 +178,9 @@ class HomePage extends StatelessWidget {
       if (index == 1) {
         // Navigasi ke halaman Wishlist
         Navigator.pushNamed(context, '/wishlist');
+      }else if (index == 2) {
+        // Navigasi ke halaman Tambah Item
+        Navigator.pushNamed(context, '/tambah');
       }
     },
     items: const [

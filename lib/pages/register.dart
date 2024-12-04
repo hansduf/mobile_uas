@@ -64,7 +64,10 @@ class RegisterPage extends StatelessWidget {
               ),
               const SizedBox(height: 20.0),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  // Pindah ke halaman utama (home)
+                  Navigator.pushReplacementNamed(context, '/login');
+                },
                 style: ElevatedButton.styleFrom(
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30.0),

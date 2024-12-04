@@ -5,8 +5,9 @@ import 'pages/homepage.dart'; // Import the HomePage file
 import 'pages/keranjang.dart';
 import 'pages/login.dart'; // Import file login_screen.dart
 import 'pages/register.dart'; // Import file register_page.dart
+import 'pages/tambah.dart';// Ganti dengan jalur file Anda
 import 'pages/welcome_page.dart';
-import 'pages/whislist.dart'; // Ganti dengan jalur file Anda
+import 'pages/whislist.dart';
 
 
 void main() {
@@ -32,9 +33,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterPage(), // Halaman RegisterPage
         '/keranjang': (context) => const CartPage(), // Halaman Keranjang
         '/home': (context) => HomePage(),
-        '/wishlist': (context) => const WishlistScreen(),
-         '/tambah': (context) => const WishlistScreen(),  // Main page route
-        '/detail': (context) => const Detail(),
+         '/wishlist': (context) => const WishlistApp(),
+         '/tambah': (context) => const WishlistApp(),  // Main page route
       },
     );
   }
