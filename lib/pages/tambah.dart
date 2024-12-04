@@ -151,7 +151,9 @@ class _TambahBarangPageState extends State<TambahBarangPage> {
             ),
             const SizedBox(height: 40),
             ElevatedButton(
-              onPressed: () {},
+              onPressed: () {
+                  // Pindah ke halaman utama (home)
+                  Navigator.pushReplacementNamed(context, '/Homepage');},
               style: ElevatedButton.styleFrom(
                 backgroundColor: Colors.teal,
                 padding: const EdgeInsets.symmetric(vertical: 15.0),
