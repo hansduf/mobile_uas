@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'pages/detail.dart';
 import 'pages/homepage.dart'; // Import the HomePage file
 import 'pages/keranjang.dart';
 import 'pages/login.dart'; // Import file login_screen.dart
@@ -13,7 +14,8 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -30,8 +32,9 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const RegisterPage(), // Halaman RegisterPage
         '/keranjang': (context) => const CartPage(), // Halaman Keranjang
         '/home': (context) => HomePage(),
-         '/wishlist': (context) => const WishlistApp(),
-         '/tambah': (context) => const WishlistApp(),  // Main page route
+        '/wishlist': (context) => const WishlistScreen(),
+         '/tambah': (context) => const WishlistScreen(),  // Main page route
+        '/detail': (context) => const Detail(),
       },
     );
   }

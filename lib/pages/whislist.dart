@@ -1,21 +1,5 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  runApp(const WishlistApp());
-}
-
-class WishlistApp extends StatelessWidget {
-  const WishlistApp({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: WishlistScreen(),
-    );
-  }
-}
-
 class WishlistScreen extends StatelessWidget {
   const WishlistScreen({super.key});
 
@@ -26,11 +10,11 @@ class WishlistScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 0,
         leading: IconButton(
-  icon: const Icon(Icons.arrow_back, color: Color(0xFF005F73)),
-  onPressed: () {
-    Navigator.pop(context); // Navigasi kembali
-  },
-),
+          icon: const Icon(Icons.arrow_back, color: Color(0xFF005F73)),
+          onPressed: () {
+            Navigator.pushReplacementNamed(context, '/home'); // Navigasi ke HomePage
+          },
+        ),
         title: const Text(
           "Wishlist",
           style: TextStyle(
@@ -49,8 +33,7 @@ class WishlistScreen extends StatelessWidget {
           mainAxisSpacing: 16,
           children: [
             buildWishlistCard(
-              image:
-                  'https://via.placeholder.com/100', // Ganti dengan URL gambar nyata
+              image: 'https://via.placeholder.com/100', // Ganti dengan URL gambar nyata
               title: "Semua Wishlist",
               subtitle: "2 barang",
             ),
@@ -58,56 +41,14 @@ class WishlistScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Container(
-        decoration: const BoxDecoration(
-          color: Colors.white,
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black12,
-              blurRadius: 4.0,
-              spreadRadius: 1.0,
-            ),
-          ],
-        ),
-        child: BottomNavigationBar(
-          type: BottomNavigationBarType.fixed,
-          backgroundColor: Colors.white,
-          selectedItemColor: const Color(0xFF005F73),
-          unselectedItemColor: const Color(0xFF9E9E9E),
-          selectedFontSize: 12,
-          unselectedFontSize: 12,
-          elevation: 0,
-          items: const [
-            BottomNavigationBarItem(
-              icon: Icon(Icons.home_outlined),
-              label: "Beranda",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.favorite_outline),
-              label: "Wishlist",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.add_circle_outline),
-              label: "Tambah",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.receipt_long),
-              label: "Transaksi",
-            ),
-            BottomNavigationBarItem(
-              icon: Icon(Icons.person_outline),
-              label: "Profil",
-            ),
-          ],
-        ),
-      ),
     );
   }
 
-  Widget buildWishlistCard(
-      {required String image,
-      required String title,
-      required String subtitle}) {
+  Widget buildWishlistCard({
+    required String image,
+    required String title,
+    required String subtitle,
+  }) {
     return Card(
       elevation: 2,
       shape: RoundedRectangleBorder(
